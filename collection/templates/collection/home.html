@@ -1,0 +1,16 @@
+{% extends "collection/base.html" %}
+{% block content %}
+	{% for collection in collections %}
+		<article class="media content-section">
+		  <div class="media-body">
+		    <div class="article-metadata">
+		      <a class="mr-2" href="#">{{ collection.collection_id }}</a>
+		      <small class="text-muted">{{ collection.plant_name }}</small>
+		      <small class="text-muted">{{ collection.voucher_date|date:"F j, Y" }}</small>
+		    </div>
+		    <p class="article-content">{{ collection.location }} 
+		    {{ collection.creator }}</p>
+		  </div>
+		</article>
+	{% endfor %}
+{% endblock content %}
